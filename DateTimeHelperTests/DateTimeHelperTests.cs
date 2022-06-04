@@ -119,5 +119,43 @@ namespace DateTimeHelper.Tests
             var actual = DateTimeHelper.NumberOfWeeks(x, y, z);
             Assert.AreEqual(expected, actual);
         }
+
+        public static IEnumerable<object[]> IsWeekdayData =>
+            new[] {
+                new object[] { new DateTime(2022, 01, 01), false },
+                new object[] { new DateTime(2022, 01, 02), false },
+                new object[] { new DateTime(2022, 01, 03), true },
+                new object[] { new DateTime(2022, 01, 04), true },
+                new object[] { new DateTime(2022, 01, 05), true },
+                new object[] { new DateTime(2022, 01, 06), true },
+                new object[] { new DateTime(2022, 01, 07), true },
+            };
+
+        [TestMethod]
+        [DynamicData(nameof(IsWeekdayData))]
+        public void IsWeekdayTest(DateTime x, bool expected)
+        {
+            var actual = DateTimeHelper.IsWeekday(x);
+            Assert.AreEqual(expected, actual);
+        }
+
+        public static IEnumerable<object[]> IsWeekendData =>
+            new[] {
+                new object[] { new DateTime(2022, 01, 01), true },
+                new object[] { new DateTime(2022, 01, 02), true },
+                new object[] { new DateTime(2022, 01, 03), false },
+                new object[] { new DateTime(2022, 01, 04), false },
+                new object[] { new DateTime(2022, 01, 05), false },
+                new object[] { new DateTime(2022, 01, 06), false },
+                new object[] { new DateTime(2022, 01, 07), false },
+            };
+
+        [TestMethod]
+        [DynamicData(nameof(IsWeekendData))]
+        public void IsWeekendTest(DateTime x, bool expected)
+        {
+            var actual = DateTimeHelper.IsWeekend(x);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

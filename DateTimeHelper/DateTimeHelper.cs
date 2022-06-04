@@ -8,7 +8,7 @@ namespace DateTimeHelper
     public static class DateTimeHelper
     {
         /// <summary>
-        /// English culture code
+        /// US English culture code
         /// </summary>
         private const string EnglishCultureCode = "en-US";
 
@@ -90,7 +90,6 @@ namespace DateTimeHelper
             return dateTime;
         }
 
-
         /// <summary>
         /// Gets the first day of the month from specific date.
         /// </summary>
@@ -126,5 +125,21 @@ namespace DateTimeHelper
             var timeSpan = dateTo.Subtract(dateFrom);
             return (timeSpan.Days + 1) / 7;
         }
+
+        /// <summary>
+        /// Returns true if the date is a weekday.
+        /// </summary>
+        /// <param name="date">Date</param>
+        public static bool IsWeekday(DateTime date) =>
+            (date.DayOfWeek != DayOfWeek.Saturday
+                && date.DayOfWeek != DayOfWeek.Sunday);
+
+        /// <summary>
+        /// Returns true if the date is a weekend.
+        /// </summary>
+        /// <param name="date">Date</param>
+        public static bool IsWeekend(DateTime date) =>
+            (date.DayOfWeek == DayOfWeek.Saturday
+                || date.DayOfWeek == DayOfWeek.Sunday);
     }
 }
