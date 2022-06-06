@@ -165,8 +165,8 @@ namespace DateTimeHelper.Tests
                 new object[] { new DateTime(2022, 01, 03), false },
                 new object[] { new DateTime(2022, 01, 04), false },
                 new object[] { new DateTime(2022, 01, 05), false },
-                new object[] { new DateTime(2022, 01, 05), false },
-                new object[] { new DateTime(2022, 01, 05), false },
+                new object[] { new DateTime(2022, 01, 06), false },
+                new object[] { new DateTime(2022, 01, 07), false },
             };
 
         [TestMethod]
@@ -184,8 +184,8 @@ namespace DateTimeHelper.Tests
                 new object[] { new DateTime(2022, 01, 03), false },
                 new object[] { new DateTime(2022, 01, 04), false },
                 new object[] { new DateTime(2022, 01, 05), false },
-                new object[] { new DateTime(2022, 01, 05), false },
-                new object[] { new DateTime(2022, 01, 05), false },
+                new object[] { new DateTime(2022, 01, 06), false },
+                new object[] { new DateTime(2022, 01, 07), false },
             };
 
         [TestMethod]
@@ -203,8 +203,8 @@ namespace DateTimeHelper.Tests
                 new object[] { new DateTime(2022, 01, 03), true },
                 new object[] { new DateTime(2022, 01, 04), false },
                 new object[] { new DateTime(2022, 01, 05), false },
-                new object[] { new DateTime(2022, 01, 05), false },
-                new object[] { new DateTime(2022, 01, 05), false },
+                new object[] { new DateTime(2022, 01, 06), false },
+                new object[] { new DateTime(2022, 01, 07), false },
             };
 
         [TestMethod]
@@ -212,6 +212,25 @@ namespace DateTimeHelper.Tests
         public void IsMondayTest(DateTime x, bool expected)
         {
             var actual = DateTimeHelper.IsMonday(x);
+            Assert.AreEqual(expected, actual);
+        }
+
+        public static IEnumerable<object[]> IsTuesdayData =>
+            new[] {
+                new object[] { new DateTime(2022, 01, 01), false },
+                new object[] { new DateTime(2022, 01, 02), false },
+                new object[] { new DateTime(2022, 01, 03), false },
+                new object[] { new DateTime(2022, 01, 04), true },
+                new object[] { new DateTime(2022, 01, 05), false },
+                new object[] { new DateTime(2022, 01, 06), false },
+                new object[] { new DateTime(2022, 01, 07), false },
+            };
+
+        [TestMethod]
+        [DynamicData(nameof(IsTuesdayData))]
+        public void IsTuesdayTest(DateTime x, bool expected)
+        {
+            var actual = DateTimeHelper.IsTuesday(x);
             Assert.AreEqual(expected, actual);
         }
     }
