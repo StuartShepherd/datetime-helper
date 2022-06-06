@@ -169,5 +169,12 @@ namespace DateTimeHelper
         /// <param name="date">Date</param>
         public static bool IsTuesday(this DateTime date) =>
             date.DayOfWeek == DayOfWeek.Tuesday;
+
+        /// <summary>
+        /// Returns true if the date is Wednesday.
+        /// </summary>
+        /// <param name="date">Date</param>
+        public static bool IsWednesday(this DateTime date) =>
+            date.DayOfWeek == DayOfWeek.Wednesday;
     }
 }
