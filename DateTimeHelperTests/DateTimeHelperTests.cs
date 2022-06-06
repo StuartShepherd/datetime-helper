@@ -271,5 +271,24 @@ namespace DateTimeHelper.Tests
             var actual = DateTimeHelper.IsThursday(x);
             Assert.AreEqual(expected, actual);
         }
+
+        public static IEnumerable<object[]> IsFridayData =>
+            new[] {
+                new object[] { new DateTime(2022, 01, 01), false },
+                new object[] { new DateTime(2022, 01, 02), false },
+                new object[] { new DateTime(2022, 01, 03), false },
+                new object[] { new DateTime(2022, 01, 04), false },
+                new object[] { new DateTime(2022, 01, 05), false },
+                new object[] { new DateTime(2022, 01, 06), false },
+                new object[] { new DateTime(2022, 01, 07), true },
+            };
+
+        [TestMethod]
+        [DynamicData(nameof(IsFridayData))]
+        public void IsFridayTest(DateTime x, bool expected)
+        {
+            var actual = DateTimeHelper.IsFriday(x);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

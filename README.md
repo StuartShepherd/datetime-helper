@@ -21,6 +21,7 @@ The DateTimeHelper type exposes the following members.
 | IsTuesday         | Returns true if the date is Tuesday.                |
 | IsWednesday       | Returns true if the date is Wednesday.              |
 | IsThursday        | Returns true if the date is Thursday.               |
+| IsFriday          | Returns true if the date is Friday.                 |
 
 ## Tech Stack
 
