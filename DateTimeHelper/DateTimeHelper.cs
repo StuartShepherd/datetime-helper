@@ -155,5 +155,12 @@ namespace DateTimeHelper
         /// <param name="date">Date</param>
         public static bool IsSunday(DateTime date) =>
             date.DayOfWeek == DayOfWeek.Sunday;
+
+        /// <summary>
+        /// Returns true if the date is Monday.
+        /// </summary>
+        /// <param name="date">Date</param>
+        public static bool IsMonday(this DateTime date) =>
+            date.DayOfWeek == DayOfWeek.Monday;
     }
 }

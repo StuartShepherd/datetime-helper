@@ -17,6 +17,7 @@ The DateTimeHelper type exposes the following members.
 | IsWeekend         | Returns true if the date is a weekend.              |
 | IsSaturday        | Returns true if the date is Saturday.               |
 | IsSunday          | Returns true if the date is Sunday.                 |
+| IsMonday          | Returns true if the date is Monday.                 |
 
 ## Tech Stack
 
