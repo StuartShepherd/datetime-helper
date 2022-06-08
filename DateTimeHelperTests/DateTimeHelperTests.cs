@@ -290,5 +290,67 @@ namespace DateTimeHelper.Tests
             var actual = DateTimeHelper.IsFriday(x);
             Assert.AreEqual(expected, actual);
         }
+
+        [DataTestMethod]
+        [DataRow(-10, false)]
+        [DataRow(0, false)]
+        [DataRow(10000, false)]
+        [DataRow(1, true)]
+        [DataRow(1066, true)]
+        [DataRow(1976, true)]
+        [DataRow(2022, true)]
+        [DataRow(9999, true)]
+        public void IsValidYearTest(int x, bool expected)
+        {
+            var actual = DateTimeHelper.IsValidYear(x);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [DataTestMethod]
+        [DataRow(0, false)]
+        [DataRow(13, false)]
+        [DataRow(22, false)]
+        [DataRow(1, true)]
+        [DataRow(6, true)]
+        [DataRow(8, true)]
+        [DataRow(10, true)]
+        [DataRow(12, true)]
+        public void IsValidMonthTest(int x, bool expected)
+        {
+            var actual = DateTimeHelper.IsValidMonth(x);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [DataTestMethod]
+        [DataRow(2022, 2, 29, false)]
+        [DataRow(2022, 11, 31, false)]
+        [DataRow(2022, 12, 32, false)]
+        [DataRow(2022, 13, 1, false)]
+        [DataRow(1, 1, 1, true)]
+        [DataRow(2022, 1, 1, true)]
+        [DataRow(2022, 6, 30, true)]
+        [DataRow(2020, 12, 31, true)]
+        public void IsValidDayTest(int x, int y, int z, bool expected)
+        {
+            var actual = DateTimeHelper.IsValidDay(x, y, z);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [DataTestMethod]
+        [DataRow(2022, 2, 29, false)]
+        [DataRow(2022, 11, 31, false)]
+        [DataRow(2022, 12, 32, false)]
+        [DataRow(2022, 13, 1, false)]
+        [DataRow(2020, 2, 29, true)]
+        [DataRow(1, 1, 1, true)]
+        [DataRow(22, 5, 5, true)]
+        [DataRow(2022, 1, 1, true)]
+        [DataRow(2022, 6, 30, true)]
+        [DataRow(2020, 12, 31, true)]
+        public void IsValidDateTest(int x, int y, int z, bool expected)
+        {
+            var actual = DateTimeHelper.IsValidDate(x, y, z);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

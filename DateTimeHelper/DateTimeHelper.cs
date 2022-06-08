@@ -190,5 +190,44 @@ namespace DateTimeHelper
         /// <param name="date">Date</param>
         public static bool IsFriday(this DateTime date) =>
             date.DayOfWeek == DayOfWeek.Friday;
+
+        /// <summary>
+        /// Returns true if the year is a valid year.
+        /// </summary>
+        /// <param name="year">Year</param>
+        public static bool IsValidYear(int year) =>
+            year >= DateTime.MinValue.Year &&
+            year <= DateTime.MaxValue.Year;
+
+        /// <summary>
+        /// Returns true if the month is a valid month.
+        /// </summary>
+        /// <param name="month">Month</param>
+        public static bool IsValidMonth(int month) =>
+            month >= 1 &&
+            month <= 12;
+
+        /// <summary>
+        /// Returns true if the day is a valid day.
+        /// </summary>
+        /// <param name="year">Year</param>
+        /// <param name="month">Month</param>
+        /// <param name="day">Day</param>
+        public static bool IsValidDay(int year, int month, int day) =>
+            IsValidYear(year) &&
+            IsValidMonth(month) &&
+            day >= 1 &&
+            DateTime.DaysInMonth(year, month) >= day;
+
+        /// <summary>
+        /// Returns true if the year, month, and day is a valid date.
+        /// </summary>
+        /// <param name="year">Year</param>
+        /// <param name="month">Month</param>
+        /// <param name="day">Day</param>
+        public static bool IsValidDate(int year, int month, int day) =>
+            IsValidYear(year) &&
+            IsValidMonth(month) &&
+            IsValidDay(year, month, day);
     }
 }
