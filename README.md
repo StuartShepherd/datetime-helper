@@ -12,6 +12,9 @@ The DateTimeHelper type exposes the following members.
 | GetWeekStart      | Gets the date from the beginning of week.                 |
 | GetMonthStart     | Gets the first day of the month from specific date.       |
 | GetYearStart      | Gets the first day of the year from specific date.        |
+| GetYearStart      | Gets the first day of the year from specific date.        |
+| GetMinDate        | Gets the DateTime.MinValue.                               |
+| GetMaxDate        | Gets the DateTime.MaxValue.                               |
 | NumberOfWeeks     | Gets number of weeks in specified time interval.          |
 | IsWeekday         | Returns true if the date is a weekday.                    |
 | IsWeekend         | Returns true if the date is a weekend.                    |
