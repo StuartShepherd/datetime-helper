@@ -105,6 +105,18 @@ namespace DateTimeHelper
             new(date.Year, 1, 1);
 
         /// <summary>
+        /// Gets the DateTime.MinValue
+        /// </summary>
+        public static DateTime GetMinDate() =>
+            DateTime.MinValue;
+
+        /// <summary>
+        /// Gets the DateTime.MaxValue
+        /// </summary>
+        public static DateTime GetMaxDate() =>
+            DateTime.MaxValue;
+
+        /// <summary>
         /// Gets number of weeks in specified time interval.
         /// </summary>
         /// <param name="dateFrom">Time from</param>

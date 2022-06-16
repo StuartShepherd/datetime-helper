@@ -100,6 +100,32 @@ namespace DateTimeHelper.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        public static IEnumerable<object[]> GetMinDateData =>
+            new[] {
+                new object[] { DateTime.MinValue }
+            };
+
+        [TestMethod]
+        [DynamicData(nameof(GetMinDateData))]
+        public void GetMinDateTest(DateTime expected)
+        {
+            var actual = DateTimeHelper.GetMinDate();
+            Assert.AreEqual(expected, actual);
+        }
+
+        public static IEnumerable<object[]> GetMaxDateData =>
+            new[] {
+                new object[] { DateTime.MaxValue }
+            };
+
+        [TestMethod]
+        [DynamicData(nameof(GetMaxDateData))]
+        public void GetMaxDateTest(DateTime expected)
+        {
+            var actual = DateTimeHelper.GetMaxDate();
+            Assert.AreEqual(expected, actual);
+        }
+
         public static IEnumerable<object[]> NumberOfWeeksData =>
             new[] {
                 new object[] { new DateTime(2022, 01, 01), new DateTime(2022, 02, 01), null, 5 },
