@@ -121,9 +121,9 @@ namespace DateTimeHelper
         /// </summary>
         /// <param name="dateFrom">Time from</param>
         /// <param name="dateTo">Time to</param>
-        public static int NumberOfWeeks(DateTime dateFrom, DateTime dateTo) =>
+        public static int GetNumberOfWeeks(DateTime dateFrom, DateTime dateTo) =>
             DateTimeHelper
-                .NumberOfWeeks(dateFrom, dateTo, null);
+                .GetNumberOfWeeks(dateFrom, dateTo, null);
 
         /// <summary>
         /// Gets number of weeks in specified time interval.
@@ -131,7 +131,7 @@ namespace DateTimeHelper
         /// <param name="dateFrom">Time from</param>
         /// <param name="dateTo">Time to</param>
         /// <param name="culture">Culture</param>
-        public static int NumberOfWeeks(DateTime dateFrom, DateTime dateTo, string? culture)
+        public static int GetNumberOfWeeks(DateTime dateFrom, DateTime dateTo, string? culture)
         {
             dateFrom = DateTimeHelper.GetWeekStart(dateFrom, culture);
             var timeSpan = dateTo.Subtract(dateFrom);

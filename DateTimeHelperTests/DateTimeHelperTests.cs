@@ -140,9 +140,9 @@ namespace DateTimeHelper.Tests
 
         [TestMethod]
         [DynamicData(nameof(NumberOfWeeksData))]
-        public void NumberOfWeeksTest(DateTime x, DateTime y, string z, int expected)
+        public void GetNumberOfWeeksTest(DateTime x, DateTime y, string z, int expected)
         {
-            var actual = DateTimeHelper.NumberOfWeeks(x, y, z);
+            var actual = DateTimeHelper.GetNumberOfWeeks(x, y, z);
             Assert.AreEqual(expected, actual);
         }
 
