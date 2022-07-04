@@ -146,6 +146,21 @@ namespace DateTimeHelper.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        public static IEnumerable<object[]> IgnoreHoursData =>
+            new[] {
+                new object[] { null, null },
+                new object[] { new DateTime(2022, 01, 01, 17, 30, 59), new DateTime(2022, 01, 01) },
+                new object[] { new DateTime(2022, 10, 30, 13, 45, 15), new DateTime(2022, 10, 30) },  
+            };
+
+        [TestMethod]
+        [DynamicData(nameof(IgnoreHoursData))]
+        public void IgnoreHoursTest(DateTime x, DateTime expected)
+        {
+            var actual = DateTimeHelper.IgnoreHours(x);
+            Assert.AreEqual(expected, actual);
+        }
+
         public static IEnumerable<object[]> IsWeekdayData =>
             new[] {
                 new object[] { new DateTime(2022, 01, 01), false },

@@ -139,6 +139,26 @@ namespace DateTimeHelper
         }
 
         /// <summary>
+        /// Returns the specific datetime part.
+        /// </summary>
+        /// <param name="dateTime">Date</param>
+        /// <param name="timeSpan">Timespan to remove</param>
+        private static DateTime IgnoreTimeSpan(DateTime dateTime, TimeSpan timeSpan)
+        {
+            if (timeSpan == TimeSpan.Zero)
+                return dateTime;
+
+            return dateTime.AddTicks(-(dateTime.Ticks % timeSpan.Ticks));
+        }
+
+        /// <summary>
+        /// Returns value with the hours removed.
+        /// </summary>
+        /// <param name="dateTime">Date</param>
+        public static DateTime IgnoreHours(DateTime dateTime) =>
+            IgnoreTimeSpan(dateTime, TimeSpan.FromHours(24));         
+
+        /// <summary>
         /// Returns true if the date is a weekday.
         /// </summary>
         /// <param name="date">Date</param>
