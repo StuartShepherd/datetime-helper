@@ -146,6 +146,20 @@ namespace DateTimeHelper.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        public static IEnumerable<object[]> IgnoreSecondsData =>
+            new[] {
+                new object[] { new DateTime(2022, 01, 01, 17, 30, 59), new DateTime(2022, 01, 01, 17, 30, 0) },
+                new object[] { new DateTime(2022, 10, 30, 13, 45, 15), new DateTime(2022, 10, 30, 13, 45, 0) },
+            };
+
+        [TestMethod]
+        [DynamicData(nameof(IgnoreSecondsData))]
+        public void IgnoreSecondsTest(DateTime x, DateTime expected)
+        {
+            var actual = DateTimeHelper.IgnoreSeconds(x);
+            Assert.AreEqual(expected, actual);
+        }
+
         public static IEnumerable<object[]> IgnoreMinutesData =>
             new[] {
                         new object[] { new DateTime(2022, 01, 01, 17, 30, 59), new DateTime(2022, 01, 01, 17, 0, 0) },

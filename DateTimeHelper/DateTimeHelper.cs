@@ -152,6 +152,13 @@ namespace DateTimeHelper
         }
 
         /// <summary>
+        /// Returns value with the seconds removed.
+        /// </summary>
+        /// <param name="dateTime">Date</param>
+        public static DateTime IgnoreSeconds(DateTime dateTime) => 
+            IgnoreTimeSpan(dateTime, TimeSpan.FromSeconds(60));
+
+        /// <summary>
         /// Returns value with the minutes removed.
         /// </summary>
         /// <param name="dateTime">Date</param>

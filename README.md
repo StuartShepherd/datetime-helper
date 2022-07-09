@@ -16,6 +16,7 @@ The DateTimeHelper type exposes the following members.
 | GetMinDate        | Gets the DateTime.MinValue.                               |
 | GetMaxDate        | Gets the DateTime.MaxValue.                               |
 | GetNumberOfWeeks  | Gets number of weeks in specified time interval.          |
+| IgnoreSeonds      | Returns value with the seconds removed.                   |
 | IgnoreMinutes     | Returns value with the minutes removed.                   |
 | IgnoreHours       | Returns value with the hours removed.                     |
 | IsWeekday         | Returns true if the date is a weekday.                    |
