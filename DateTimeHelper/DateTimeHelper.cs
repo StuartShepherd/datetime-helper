@@ -248,7 +248,7 @@ namespace DateTimeHelper
         /// Returns true if the hour is a valid hour.
         /// </summary>
         /// <param name="hour">Hour</param>
-        private static bool IsValidHour(int hour) =>
+        public static bool IsValidHour(int hour) =>
             hour >= 0 &&
             hour <= 23;
 

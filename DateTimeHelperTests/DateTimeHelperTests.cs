@@ -375,6 +375,19 @@ namespace DateTimeHelper.Tests
 
         [DataTestMethod]
         [DataRow(-10, false)]
+        [DataRow(24, false)]
+        [DataRow(0, true)]        
+        [DataRow(1, true)]
+        [DataRow(13, true)]
+        [DataRow(23, true)]
+        public void IsValidHourTest(int x, bool expected)
+        {
+            var actual = DateTimeHelper.IsValidHour(x);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [DataTestMethod]
+        [DataRow(-10, false)]
         [DataRow(0, false)]
         [DataRow(10000, false)]
         [DataRow(1, true)]
