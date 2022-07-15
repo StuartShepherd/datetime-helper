@@ -32,6 +32,7 @@ The DateTimeHelper type exposes the following members.
 | IsValidMonth      | Returns true if the month is a valid month.               |
 | IsValidDay        | Returns true if the day is a valid day.                   |
 | IsValidDate       | Returns true if the year, month, and day is a valid date. |
+| IsValidTime       | Returns true if the hour, minute, and second is a valid time. |
 
 ## Tech Stack
 

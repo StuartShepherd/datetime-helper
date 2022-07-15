@@ -245,6 +245,30 @@ namespace DateTimeHelper
             date.DayOfWeek == DayOfWeek.Friday;
 
         /// <summary>
+        /// Returns true if the hour is a valid hour.
+        /// </summary>
+        /// <param name="hour">Hour</param>
+        private static bool IsValidHour(int hour) =>
+            hour >= 0 &&
+            hour <= 23;
+
+        /// <summary>
+        /// Returns true if the minute is a valid minute.
+        /// </summary>
+        /// <param name="minute">Minute</param>
+        private static bool IsValidMinute(int minute) =>
+            minute >= 0 &&
+            minute <= 59;
+
+        /// <summary>
+        /// Returns true if the second is a valid second.
+        /// </summary>
+        /// <param name="second">Second</param>
+        private static bool IsValidSecond(int second) =>
+            second >= 0 &&
+            second <= 59;
+
+        /// <summary>
         /// Returns true if the year is a valid year.
         /// </summary>
         /// <param name="year">Year</param>
@@ -282,5 +306,16 @@ namespace DateTimeHelper
             IsValidYear(year) &&
             IsValidMonth(month) &&
             IsValidDay(year, month, day);
+
+        /// <summary>
+        /// Returns true if the hour, minute, and second is a valid time.
+        /// </summary>
+        /// <param name="hour">Hour</param>
+        /// <param name="minute">Minute</param>
+        /// <param name="second">Second</param>
+        public static bool IsValidTime(int hour, int minute, int second = 0) =>
+            IsValidHour(hour) &&
+            IsValidMinute(minute) &&
+            IsValidSecond(second);
     }
 }

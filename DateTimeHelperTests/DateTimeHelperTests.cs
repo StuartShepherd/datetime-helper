@@ -434,5 +434,20 @@ namespace DateTimeHelper.Tests
             var actual = DateTimeHelper.IsValidDate(x, y, z);
             Assert.AreEqual(expected, actual);
         }
+
+        [DataTestMethod]
+        [DataRow(-1, -1, -1, false)]
+        [DataRow(24, 30, 30, false)]
+        [DataRow(17, 60, 30, false)]
+        [DataRow(17, 59, 60, false)]
+        [DataRow(0, 0, 0, true)]
+        [DataRow(23, 30, 30, true)]
+        [DataRow(10, 20, 59, true)]
+        [DataRow(17, 30, 45, true)]
+        public void IsValidTimeTest(int x, int y, int z, bool expected)
+        {
+            var actual = DateTimeHelper.IsValidTime(x, y, z);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
