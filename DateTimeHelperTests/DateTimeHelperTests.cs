@@ -388,6 +388,19 @@ namespace DateTimeHelper.Tests
 
         [DataTestMethod]
         [DataRow(-10, false)]
+        [DataRow(60, false)]
+        [DataRow(0, true)]
+        [DataRow(1, true)]
+        [DataRow(30, true)]
+        [DataRow(59, true)]
+        public void IsValidMinuteTest(int x, bool expected)
+        {
+            var actual = DateTimeHelper.IsValidMinute(x);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [DataTestMethod]
+        [DataRow(-10, false)]
         [DataRow(0, false)]
         [DataRow(10000, false)]
         [DataRow(1, true)]
