@@ -256,7 +256,7 @@ namespace DateTimeHelper
         /// Returns true if the minute is a valid minute.
         /// </summary>
         /// <param name="minute">Minute</param>
-        private static bool IsValidMinute(int minute) =>
+        public static bool IsValidMinute(int minute) =>
             minute >= 0 &&
             minute <= 59;
 
@@ -264,7 +264,7 @@ namespace DateTimeHelper
         /// Returns true if the second is a valid second.
         /// </summary>
         /// <param name="second">Second</param>
-        private static bool IsValidSecond(int second) =>
+        public static bool IsValidSecond(int second) =>
             second >= 0 &&
             second <= 59;
 

@@ -29,6 +29,8 @@ The DateTimeHelper type exposes the following members.
 | IsThursday        | Returns true if the date is Thursday.                     |
 | IsFriday          | Returns true if the date is Friday.                       |
 | IsValidHour       | Returns true if the hour is a valid hour.                 |
+| IsValidMinute       | Returns true if the minute is a valid minute.                 |
+| IsValidSecond       | Returns true if the second is a valid second.                 |
 | IsValidYear       | Returns true if the year is a valid year.                 |
 | IsValidMonth      | Returns true if the month is a valid month.               |
 | IsValidDay        | Returns true if the day is a valid day.                   |
