@@ -41,7 +41,7 @@ namespace DateTimeHelper
         /// </summary>
         /// <param name="value">Value date</param>
         /// <param name="compare">Compare date</param>
-        public static int AgeYears(DateTime value, DateTime compare)
+        public static int GetAgeInYears(DateTime value, DateTime compare)
         {
             if (value > compare)
                 throw new ArgumentOutOfRangeException(nameof(value));
@@ -54,7 +54,7 @@ namespace DateTimeHelper
         /// </summary>
         /// <param name="value">Value date</param>
         /// <param name="compare">Compare date</param>
-        public static decimal AgeExactYears(DateTime value, DateTime compare)
+        public static decimal GetExactAgeInYears(DateTime value, DateTime compare)
         {
             if (value > compare)
                 throw new ArgumentOutOfRangeException(nameof(value));
