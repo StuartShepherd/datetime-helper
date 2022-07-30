@@ -46,7 +46,11 @@ namespace DateTimeHelper
             if (value > compare)
                 throw new ArgumentOutOfRangeException(nameof(value));
 
-            return compare.Year - value.Year;
+            int age = value.Year - compare.Year;
+            if (value < compare.AddYears(age))
+                age--;
+
+            return age;
         }
 
         /// <summary>
