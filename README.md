@@ -6,6 +6,7 @@ The DateTimeHelper type exposes the following members.
 
 | Method            | Method Description                                        |
 | ----------------- | --------------------------------------------------------- |
+| AgeExactYears | Returns the exact number of years |
 | GetFirstDayOfWeek | Gets the first day of the week.                           |
 | GetHourStart      | Gets current date without minutes and seconds.            |
 | GetMinuteStart    | Gets current date without seconds.                        |
