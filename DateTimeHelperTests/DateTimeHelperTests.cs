@@ -5,6 +5,31 @@ namespace DateTimeHelper.Tests
     [TestClass()]
     public class DateTimeHelperTests
     {
+        public static IEnumerable<object[]> AgeYearsData =>
+            new[] {
+                new object[] { new DateTime(1980, 06, 30), new DateTime(2000, 06, 30), 20 },
+                new object[] { new DateTime(1980, 01, 01), new DateTime(2022, 07, 30), 42 },
+                new object[] { new DateTime(1976, 01, 09), new DateTime(2022, 07, 30), 46 },
+            };
+
+        [TestMethod]
+        [DynamicData(nameof(AgeYearsData))]
+        public void AgeYearsTest(DateTime x, DateTime y, int expected)
+        {
+            var actual = DateTimeHelper.AgeYears(x, y);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void AgeYearsTest_ShouldThrowArgumentOutOfRangeException()
+        {
+            var value = new DateTime(2022, 06, 30);
+            var compare = new DateTime(2020, 06, 30);
+
+            var actual = DateTimeHelper.AgeYears(value, compare);
+        }
+
         public static IEnumerable<object[]> AgeExactYearsData =>
             new[] {
                 new object[] { new DateTime(1980, 06, 30), new DateTime(2000, 06, 30), 20m },

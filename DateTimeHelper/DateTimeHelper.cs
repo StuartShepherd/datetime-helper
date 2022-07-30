@@ -37,7 +37,20 @@ namespace DateTimeHelper
         }
 
         /// <summary>
-        /// Returns the exact number of years
+        /// Returns the number of years between two dates.
+        /// </summary>
+        /// <param name="value">Value date</param>
+        /// <param name="compare">Compare date</param>
+        public static int AgeYears(DateTime value, DateTime compare)
+        {
+            if (value > compare)
+                throw new ArgumentOutOfRangeException(nameof(value));
+
+            return compare.Year - value.Year;
+        }
+
+        /// <summary>
+        /// Returns the exact number of years between two dates.
         /// </summary>
         /// <param name="value">Value date</param>
         /// <param name="compare">Compare date</param>

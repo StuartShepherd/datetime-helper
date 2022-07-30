@@ -6,7 +6,8 @@ The DateTimeHelper type exposes the following members.
 
 | Method            | Method Description                                        |
 | ----------------- | --------------------------------------------------------- |
-| AgeExactYears | Returns the exact number of years |
+| AgeYears          | Returns the number of years between two dates             |
+| AgeExactYears     | Returns the exact number of years between two dates       |
 | GetFirstDayOfWeek | Gets the first day of the week.                           |
 | GetHourStart      | Gets current date without minutes and seconds.            |
 | GetMinuteStart    | Gets current date without seconds.                        |
@@ -30,8 +31,8 @@ The DateTimeHelper type exposes the following members.
 | IsThursday        | Returns true if the date is Thursday.                     |
 | IsFriday          | Returns true if the date is Friday.                       |
 | IsValidHour       | Returns true if the hour is a valid hour.                 |
-| IsValidMinute       | Returns true if the minute is a valid minute.                 |
-| IsValidSecond       | Returns true if the second is a valid second.                 |
+| IsValidMinute     | Returns true if the minute is a valid minute.             |
+| IsValidSecond     | Returns true if the second is a valid second.             |
 | IsValidYear       | Returns true if the year is a valid year.                 |
 | IsValidMonth      | Returns true if the month is a valid month.               |
 | IsValidDay        | Returns true if the day is a valid day.                   |
