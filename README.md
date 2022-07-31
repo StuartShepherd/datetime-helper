@@ -6,7 +6,7 @@ The DateTimeHelper type exposes the following members.
 
 | Method               | Method Description                                            |
 | ---------------------|---------------------------------------------------------------|
-| GetDifferenceInYears | Returns the number of years between two dates                 |
+| GetDifferenceInDays  | Returns the number of days between two dates                  |
 | GetExactAgeInYears   | Returns the exact number of years between two dates           |
 | GetFirstDayOfWeek    | Gets the first day of the week.                               |
 | GetHourStart         | Gets current date without minutes and seconds.                |
