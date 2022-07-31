@@ -54,19 +54,6 @@ namespace DateTimeHelper
         }
 
         /// <summary>
-        /// Returns the exact number of years between two dates.
-        /// </summary>
-        /// <param name="value">Value date</param>
-        /// <param name="compare">Compare date</param>
-        public static decimal GetExactAgeInYears(DateTime value, DateTime compare)
-        {
-            if (value > compare)
-                throw new ArgumentOutOfRangeException(nameof(value));
-
-            return Math.Round(((decimal)(compare.Year * 12 + compare.Month) - (value.Year * 12 + value.Month)) / 12, 2);
-        }
-
-        /// <summary>
         /// Gets the first day of the week.
         /// </summary>
         public static DayOfWeek GetFirstDayOfWeek() =>

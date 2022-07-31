@@ -30,31 +30,6 @@ namespace DateTimeHelper.Tests
             var actual = DateTimeHelper.GetAgeInYears(value, compare);
         }
 
-        public static IEnumerable<object[]> GetExactAgeInYearsData =>
-            new[] {
-                new object[] { new DateTime(1980, 06, 30), new DateTime(2000, 06, 30), 20m },
-                new object[] { new DateTime(1980, 01, 01), new DateTime(2022, 07, 30), 42.5m },
-                new object[] { new DateTime(1976, 01, 09), new DateTime(2022, 07, 30), 46.5m },
-            };
-
-        [TestMethod]
-        [DynamicData(nameof(GetExactAgeInYearsData))]
-        public void AgeExactYearsTest(DateTime x, DateTime y, decimal expected)
-        {
-            var actual = DateTimeHelper.GetExactAgeInYears(x, y);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void AgeExactYearsTest_ShouldThrowArgumentOutOfRangeException()
-        {
-            var value = new DateTime(2022, 06, 30);
-            var compare = new DateTime(2020, 06, 30);
-
-            var actual = DateTimeHelper.GetExactAgeInYears(value, compare);
-        }
-
         [DataTestMethod]
         [DataRow(null, DayOfWeek.Sunday)]
         [DataRow("test", DayOfWeek.Sunday)]
