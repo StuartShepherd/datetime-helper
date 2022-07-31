@@ -5,18 +5,20 @@ namespace DateTimeHelper.Tests
     [TestClass()]
     public class DateTimeHelperTests
     {
-        public static IEnumerable<object[]> GetAgeInYearsData =>
+        public static IEnumerable<object[]> GetDifferenceInDaysData =>
             new[] {
-                new object[] { new DateTime(1980, 06, 30), new DateTime(2000, 06, 30), 20 },
-                new object[] { new DateTime(1980, 01, 01), new DateTime(2022, 07, 30), 42 },
-                new object[] { new DateTime(1976, 01, 09), new DateTime(2022, 07, 30), 46 },
+                new object[] { new DateTime(2022, 02, 28), new DateTime(2022, 03, 01), 1 },
+                new object[] { new DateTime(2020, 02, 28), new DateTime(2020, 03, 01), 2 },
+                new object[] { new DateTime(2022, 01, 01), new DateTime(2022, 01, 31), 30 },
+                new object[] { new DateTime(2000, 01, 01), new DateTime(2022, 07, 31), 8247 },
+                new object[] { new DateTime(1976, 01, 09), new DateTime(2022, 07, 31), 17005 },
             };
 
         [TestMethod]
-        [DynamicData(nameof(GetAgeInYearsData))]
+        [DynamicData(nameof(GetDifferenceInDaysData))]
         public void AgeYearsTest(DateTime x, DateTime y, int expected)
         {
-            var actual = DateTimeHelper.GetAgeInYears(x, y);
+            var actual = DateTimeHelper.GetDifferenceInDays(x, y);
             Assert.AreEqual(expected, actual);
         }
 
@@ -27,7 +29,7 @@ namespace DateTimeHelper.Tests
             var value = new DateTime(2022, 06, 30);
             var compare = new DateTime(2020, 06, 30);
 
-            var actual = DateTimeHelper.GetAgeInYears(value, compare);
+            var actual = DateTimeHelper.GetDifferenceInDays(value, compare);
         }
 
         [DataTestMethod]

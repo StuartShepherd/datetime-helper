@@ -37,20 +37,17 @@ namespace DateTimeHelper
         }
 
         /// <summary>
-        /// Returns the number of years between two dates.
+        /// Returns the number of days between two dates.
         /// </summary>
-        /// <param name="value">Value date</param>
-        /// <param name="compare">Compare date</param>
-        public static int GetAgeInYears(DateTime value, DateTime compare)
+        /// <param name="startDate">Start date</param>
+        /// <param name="endDate">End date</param>
+        public static int GetDifferenceInDays(DateTime startDate, DateTime endDate)
         {
-            if (value > compare)
-                throw new ArgumentOutOfRangeException(nameof(value));
+            if (startDate > endDate)
+                throw new ArgumentOutOfRangeException(nameof(startDate));
 
-            int age = value.Year - compare.Year;
-            if (value < compare.AddYears(age))
-                age--;
-
-            return age;
+            var difference = endDate - startDate;
+            return difference.Days;
         }
 
         /// <summary>
